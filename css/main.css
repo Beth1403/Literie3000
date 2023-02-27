@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 3rem;
+  margin-right: 10rem;
+}
+
+
+
+
+.mat {
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+.specimen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10rem;
+}
+
+.specimen .img {
+  flex-basis: 40%;
+  
+}
+.img img {
+  width:300px;
+  height: 300px;
+}
+
+.specimen .text {
+  flex-basis: 60%;
+  margin-left: 10rem;
+}
+
+.text {
+  font-family: 'Roboto Slab', serif;
+}
+
+.price {
+  text-decoration: line-through;
+}
+
+.discount {
+  color: rgb(167, 16, 16);
+}
