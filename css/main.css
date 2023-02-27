@@ -24,7 +24,33 @@ nav {
   margin-left: 3rem;
   margin-right: 10rem;
   text-transform: uppercase;
+ 
   
+}
+@media screen and (max-width: 768px) {
+  nav img {
+    width:50%;
+  }
+  .mat .text{
+    font-size: 1rem;
+    
+    
+    
+  }
+  .img img {
+    width: 150px;
+    height: 150px;
+    
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  .buttons a {
+    margin-bottom: 1rem;
+  }
 }
 
 
@@ -140,5 +166,8 @@ form input {
  
 
 }
+
+
+
 
 
