@@ -27,10 +27,11 @@ if (!empty($_POST)) {
     if ($price <= 0) {
         $errors["price2"] = "Le prix ne peut pas être de 0 ou moins";
     };
+
 }
 
 if (empty($errors)) {
-    
+
     $db = new PDO('mysql:host=localhost;dbname=literie3000;charset=UTF8', 'root', '');
 
 
@@ -42,15 +43,6 @@ if (empty($errors)) {
     $query->bindParam(":dimensions", $dimensions);
     $query->bindParam(":price", $price, PDO::PARAM_INT);
     $query->bindParam(":discount", $discount, PDO::PARAM_INT);
-    $query -> execute();
-
-    if ($query -> execute()) {
-        echo "Le matelas " . $name . " a bien été ajouté à la base de données";
-    } else {
-        echo "Erreur lors de l'ajout du matelas";
-    }
-
-   
 };
 
 
@@ -60,7 +52,7 @@ include("templates/header.php");
 <main>
     <h1>Ajouter un matelas</h1>
 
-    <form method="POST">
+    <form action="" method="POST">
         <label for="brand">Marque:</label>
         <input type="text" name="brand" value="<?= isset($brand) ? $brand : "" ?>">
         <?php
@@ -75,9 +67,9 @@ include("templates/header.php");
         <input type="text" name="name" value="<?= isset($name) ? $name : "" ?>">
         <?php
         if (isset($errors["name"])) {
-            ?>
+        ?>
             <span class="info-error"><?= $errors["name"] ?></span>
-            <?php
+        <?php
         }
         ?>
 
@@ -85,9 +77,9 @@ include("templates/header.php");
         <input type="text" name="dimensions" value="<?= isset($dimensions) ? $dimensions : "" ?>">
         <?php
         if (isset($errors["dimensions"])) {
-            ?>
+        ?>
             <span class="info-error"><?= $errors["dimensions"] ?></span>
-            <?php
+        <?php
         }
         ?>
 
@@ -95,9 +87,9 @@ include("templates/header.php");
         <input type="text" name="image" value="<?= isset($image) ? $image : "" ?>">
         <?php
         if (isset($errors["image"])) {
-            ?>
+        ?>
             <span class="info-error"><?= $errors["image"] ?></span>
-            <?php
+        <?php
         }
         ?>
 
@@ -105,9 +97,9 @@ include("templates/header.php");
         <input type="number" name="price" step="100" value="<?= isset($price) ? $price : "" ?>">
         <?php
         if (isset($errors["price"])) {
-            ?>
+        ?>
             <span class="info-error"><?= $errors["price"] ?></span>
-            <?php
+        <?php
         }
         ?>
 
@@ -115,7 +107,22 @@ include("templates/header.php");
         <input type="number" name="discount" step="50" value="<?= isset($discount) ? $discount : "" ?>">
 
         <input type="submit" value="Ajouter">
+
+        <?php
+        if ($query->execute()) {
+
+        ?>
+
+            <h1> Le matelas   <?= $name ?>  a bien été ajouté à la base de données</h1>
+        <?php
+        } else { ?>
+            <h1> Erreur lors de l'ajout du matelas</h1>
+        <?php
+        } ?>
     </form>
+
+
+    <a href="index.php">Retour au catalogue</a>
 
 </main>
 
