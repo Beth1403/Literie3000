@@ -19,7 +19,7 @@
         <div class="container flex-container">
             <nav>
                 <div class="logo"><img src="img/logo fond transparent.png" alt=""></div>
-                <div class="title"><h1>catalogue</h1></div>
+                
 
             </nav>
 

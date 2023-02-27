@@ -23,18 +23,23 @@ if (isset($_GET["id"])) {
         $delete->execute(array(":id" => $_GET["id"]));
 
         if ($delete->rowCount() > 0) {
-            ?>
-            <h1> Matelas supprimé avec succès </h1>
-            <h2><a href="index.php">Retour au catalogue</a></h2>
-            <?php
-        }
+?>
+
+            <body>
+
+
+                <main>
+                <div class="addTitle"><h1>Matelas supprimé avec succès</h1></div>
+
+                <?php
+            }
+                ?>
+                <div class="add"><a href="index.php">Retour au catalogue</a></div>
+                </main>
+            </body>
+    <?php
     }
 }
 
 include("templates/footer.php");
-?>
-
-<main>
-    
-</main>
-
+    ?>

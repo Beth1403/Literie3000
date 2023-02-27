@@ -27,7 +27,6 @@ if (!empty($_POST)) {
     if ($price <= 0) {
         $errors["price2"] = "Le prix ne peut pas être de 0 ou moins";
     };
-
 }
 
 if (empty($errors)) {
@@ -49,8 +48,11 @@ if (empty($errors)) {
 
 include("templates/header.php");
 ?>
+<body>
+    
+
 <main>
-    <h1>Ajouter un matelas</h1>
+    <div class="addTitle"><h1>Ajouter un matelas</h1></div>
 
     <form action="" method="POST">
         <label for="brand">Marque:</label>
@@ -106,25 +108,28 @@ include("templates/header.php");
         <label for="discount">Promotion:</label>
         <input type="number" name="discount" step="50" value="<?= isset($discount) ? $discount : "" ?>">
 
-        <input type="submit" value="Ajouter">
+        <div class="submit"><input type="submit" value="Ajouter"></div>
 
         <?php
         if ($query->execute()) {
 
         ?>
 
-            <h1> Le matelas   <?= $name ?>  a bien été ajouté à la base de données</h1>
+            <div class="msg"><h1> Le matelas <?= $name ?> a bien été ajouté à la base de données</h1></div>
+
         <?php
         } else { ?>
+
             <h1> Erreur lors de l'ajout du matelas</h1>
         <?php
         } ?>
     </form>
 
 
-    <a href="index.php">Retour au catalogue</a>
+<div class="add"><a href="index.php">Retour au catalogue</a></div>
 
 </main>
+</body>
 
 
 

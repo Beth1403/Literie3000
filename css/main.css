@@ -4,28 +4,34 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Roboto Slab', serif;
+  
 }
 
 body {
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
+  background: rgb(29,37,236);
+  background: linear-gradient(0deg, rgba(29,37,236,1) 0%, rgba(4,20,97,1) 100%);
+  
 }
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-left: 3rem;
   margin-right: 10rem;
+  text-transform: uppercase;
+  
 }
-
-
 
 
 .mat {
   display: flex;
   flex-direction: column;
+  
   
 
 }
@@ -33,26 +39,37 @@ nav {
 .specimen {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-left: 10rem;
+  justify-content: space-evenly;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  margin-top: 10rem;
+ 
+  
+  
 }
 
 .specimen .img {
   flex-basis: 40%;
+ 
   
 }
 .img img {
   width:300px;
   height: 300px;
+  border-radius: 15px;
 }
 
 .specimen .text {
-  flex-basis: 60%;
+  flex-basis: 40%;
   margin-left: 10rem;
 }
 
 .text {
   font-family: 'Roboto Slab', serif;
+  background-color: antiquewhite;
+  padding: 3rem;
+  border-radius: 10px;
+  
 }
 
 .price {
@@ -62,3 +79,66 @@ nav {
 .discount {
   color: rgb(167, 16, 16);
 }
+
+.specimen .buttons a {
+  text-decoration: none;
+  color:white;
+  background-color: rgb(91, 91, 212);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+}
+.add a {
+  text-decoration: none;
+  color:rgb(91, 91, 212);
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 1rem;
+  font-weight: bold;
+  margin-top: 5rem;
+  
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  
+  
+  color:antiquewhite;
+  padding: 10rem 25rem;
+  
+
+}
+
+form input {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;;
+}
+
+.addTitle, .msg {
+  color:antiquewhite;
+  text-align: center;
+  padding-top: 2rem;
+}
+.submit {
+  text-align: center;
+}
+
+.submit input {
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  background-color: antiquewhite;
+  color: rgb(91, 91, 212);
+  font-weight: bold;
+ 
+
+}
+
+

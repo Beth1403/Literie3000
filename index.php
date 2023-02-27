@@ -12,52 +12,59 @@ include("templates/header.php");
 
 ?>
 
-<main>
-    <div class="container">
-     
+<body>
 
-        <div class="literie flex-container">
-            <?php
-            foreach ($literie as $mat) {
 
-            ?>
+    <main>
+        <div class="container">
+
+
+            <div class="literie">
                 <div class="mat">
+                    <?php
+                    foreach ($literie as $mat) {
 
-                    <div class="specimen">
+                    ?>
 
-                        <div class="img"><img src="<?= $mat["image"] ?>" alt=""></div>
-                        <div class="text">
-                            <div class="brand">
-                                <h2><?= $mat["brand"] ?></h2>
+
+                        <div class="specimen">
+
+                            <div class="img"><img src="<?= $mat["image"] ?>" alt=""></div>
+                            <div class="text">
+                                <div class="brand">
+                                    <h2><?= $mat["brand"] ?></h2>
+                                </div>
+
+                                <div class="name">
+                                    <p><?= $mat["name"] ?>
+                                        <?= $mat["dimensions"] ?></p>
+                                </div>
+                                <div class="price">
+                                    <p><?= $mat["price"] ?> €
+                                </div>
+                                <div class="discount"> <?= $mat["discount"] ?>€</p>
+                                </div>
+                                <div class="buttons">
+                                    <a href="modify.php?id=<?= $mat["id"] ?>">Modifier</a>
+                                    <a href="delete.php?id=<?= $mat["id"] ?>">Supprimer</a>
+                                </div>
                             </div>
 
-                            <div class="name">
-                                <p><?= $mat["name"] ?>
-                                    <?= $mat["dimensions"] ?></p>
-                            </div>
-                            <div class="price">
-                                <p><?= $mat["price"] ?>
-                            </div>
-                            <div class="discount"> <?= $mat["discount"] ?></p>
-                            </div>
-                            <div class="buttons">
-                                <h3><a href="modif.php?id=<?= $mat["id"] ?>">Modifier</a></h3>
-                                <h3><a href="delete.php?id=<?= $mat["id"] ?>">Supprimer</a></h3>
-                            </div>
                         </div>
-                    </div>
 
+                        <?php
+                    }
+                        ?>
 
-                <?php
-            }
-                ?>
-
-                <a href="add.php">Ajouter un matelas</a>
+                        
+                        
 
                 </div>
-        </div>
+                <div class="add"><a href="add.php">Ajouter un matelas</a></div>
+            </div>
 
-</main>
+    </main>
+</body>
 
 
 
